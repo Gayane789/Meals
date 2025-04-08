@@ -7,18 +7,26 @@ import { ContactPage } from './pages/ContactPage';
 import { CategoryPage } from './pages/CategoryPage';
 import { DetailPage } from './pages/DetailPage';
 
+
 export function App() {
   return (
-    <>
+    <div className="flex flex-col min-h-screen">
       <Header />
-      <Routes>
-        <Route path='/' element={<HomePage/>} />
-        <Route path='/about' element={<AboutPage />} />
-        <Route path='/contact' element={<ContactPage/>} />
-        <Route path='/category/:name' element={<CategoryPage />} />
-        <Route path='/meal/:id' element={<DetailPage /> } />
-      </Routes>
+
+      <div className="flex-grow">
+        <Routes>
+          <Route path='/' element={<HomePage/>} />
+          <Route path='/about' element={<AboutPage />} />
+          <Route path='/contact' element={<ContactPage/>} />
+          <Route path='/category/:name' element={<CategoryPage />} />
+          <Route path='/meal/:id' element={<DetailPage /> } />
+        </Routes>
+      </div>
+
       <Footer />
-    </>
-  )
+    </div>
+  );
 }
+
+
+
